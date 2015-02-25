@@ -1,0 +1,78 @@
+h1, h2, h3, h4, h5, h6 {
+	color: $darkgrey;
+	font-weight: normal;
+	line-height: 1.2;
+}
+
+h1 {
+	font-family: 'Fjalla One', 'Arial' sans-serif;
+    margin: 0;
+    text-transform: uppercase;
+
+    @include media ( $tablet ) {
+    	font-size: 2.9em;
+    }
+
+    @include media ( $laptop ) {
+    	font-size: 3.747em;
+    }
+
+    a {
+    	color: $darkgrey;
+
+    	&:hover {
+    		color: $grey;
+    	}
+    }
+
+    span {
+		font-size: 1.3em;
+		display:block;
+		margin: 0;
+		text-transform: none;
+	}
+}
+
+h2 {
+    font-size: 1.9em;
+    line-height:1;
+    text-align: left;
+    text-transform: uppercase;
+    @include media( $tablet ) {
+		margin-top:1.953em;
+		margin-bottom: 0;
+    }
+    @include media ( $laptop ) {
+    	font-size: 2.874em;
+    }
+}
+
+h3 {
+    font-style: italic;
+    font-weight:700;
+    font-size:1.229em;
+    margin:1em 0 .25em 0;
+}
+
+p {
+    line-height: 1.6;
+    margin: 0 0 1.2em 0;
+}
+
+ul {
+	margin: 0 0 0 2em;
+	padding: 0;
+}
+
+figure, blockquote {
+	margin: 0;
+}
+
+a {
+	@include transition( all 0.3s ease-in-out);
+	color: $grey;
+	text-decoration: none;
+	&:hover {
+		color: $darkgrey;
+	}
+}

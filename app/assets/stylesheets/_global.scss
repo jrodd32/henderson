@@ -1,0 +1,320 @@
+$font: new-breakpoint(max-width 25em);
+$tablet: new-breakpoint(48em);
+$laptop: new-breakpoint(64em);
+
+$darkgrey: #2d3d47;
+$grey: #667682;
+$blue: #2e98cc;
+$green: #00a967;
+
+
+body {
+	background: #f9f9f9;
+	color: $darkgrey;
+	font-family: 'Merriweather', Georgia, 'Times New Roman', Times, serif;
+	font-weight: 300;
+	@include media( $font ) {
+		font-size: 90%;
+	}
+}
+
+header {
+	@include row;
+	max-height: em(50px);
+	position: fixed;
+	width: 100%;
+	div {
+		background: $darkgrey;
+		height: em(1px);
+		position: relative;
+
+		ul {
+			border: em(1px) solid $darkgrey;
+			list-style: none;
+			list-style-type: none;
+			font-family: 'Fjalla One', 'Arial' sans-serif;
+			font-size: 110%;
+			position: absolute;
+			right: 2em;
+			top: 0;
+			text-transform: uppercase;
+			width: em(280px);
+		}
+
+		li {
+			display: block;
+			float: left;
+			width: 50%;
+		}
+
+		a {
+			@include transition( all 0.3s ease-in-out);
+			background: #fff;
+			border-top: none;
+			color: $darkgrey;
+			display: block;
+			height: em(40px);
+			line-height: em(40px);
+			text-decoration: none;
+			text-align: center;
+			
+			&:hover {
+				background: $darkgrey;
+				color: #fff;
+			}
+
+			&#donate {
+				background: $green;
+				color: #fff;
+				left: 2em + em(140px);
+
+				&:hover {
+					background: $darkgrey;
+				}
+			}
+		}
+	}	
+}
+
+nav {
+	height: em(50px);
+	width: 35%;
+
+	&.scroll ul {
+		border: none;
+		overflow: hidden;
+		width: 0;
+	}
+
+	ul {
+		@include transition( all 0.5s ease-in-out);
+		background: rgba(255,255,255, 0.9);
+		border: 1px solid shade(#fff, 5%);
+		border-top: none;
+		float: left;
+		margin: 0;
+		max-height: em(50px);
+		padding: 0;
+		width: 23.91em;
+	}
+	li {
+		display: block;
+		float: left;
+		line-height: em(50px);
+		max-height: em(50px);
+		width: 33.3%;
+	}
+	a {
+		@include transition( all 0.3s ease-in-out );
+		color: $darkgrey;
+		display: block;
+		height: auto;
+		text-align: center;
+		text-decoration: none;
+		width: 100%;
+
+		&:hover {
+			background: $grey;
+			color: #fff;
+		}
+
+		&:active {
+			background: $darkgrey;
+		}
+	}
+	#toggle {
+		background: $darkgrey;
+		color: #fff;
+		display: block;
+		font-family: 'Fjalla One', 'Arial' sans-serif;
+		float: left;
+		height: em(50px);
+		line-height: em(50px);
+		width: em(50px);
+	}
+}
+
+main {
+	@include outer-container();
+	margin-bottom: 6em;
+	padding-top: 4.5em;
+	text-align: center;
+
+	@include media( $tablet ) {
+		padding-left: 0;
+		padding-top: 8em;
+	}
+}
+
+@include reset-display;
+
+
+img {
+	@include transition( all 0.3s ease-in-out);
+	border: 2px solid $darkgrey;
+	height: auto;
+	opacity: 0.8;
+	max-width: 100%;
+
+	&:hover {
+		opacity: 1.0;
+	}
+
+}
+
+.wrapper {	
+	@include outer-container();
+	padding: 0 2em;
+	@include media( $tablet ) {
+		padding: 0;
+	}
+
+	& > section {
+		@include row;
+		margin-bottom: 6em;
+	}
+}
+
+
+
+#history {
+	h2 {
+		text-align: center;
+	}
+
+	img {
+		display: block;
+		margin: 0 auto;
+		width: em(200px);
+	}
+
+	@include media( $tablet ) {
+		figure {
+			@include span-columns(3);
+			@include shift(1);
+		}
+		article {
+			@include span-columns(8);
+
+			p {
+				max-width: 85%;
+			}
+		}
+
+		img {
+			margin: 0;
+		}
+	}
+}
+
+#platform {
+	@include media( $tablet ) {
+		figure {
+			@include span-columns(6);
+		}
+		article {
+			@include span-columns(6);
+			padding-right: 2.5em;
+		}
+	}
+}
+
+#experience {
+	@include outer-container;
+	
+	@include media( $tablet ) {
+		figure {
+			@include span-columns(6);
+
+			img {
+				display: block;
+				height: auto;
+				margin: 0 0 1em 0;
+				width: 100%;
+			}
+		}
+		blockquote {
+			@include span-columns(6);	
+		}
+		.columns {
+			figure, p {
+				@include span-columns(4);
+				padding-right: 1em;
+			}
+		}
+	}
+}
+
+#contact {
+	input, textarea {
+		@include transition( all 0.3s ease-in-out);
+		border: 1px solid shade(#f9f9f9, 5%);
+		display: block;
+		margin: 0 0 1.5em 0;
+		outline: none;
+
+		&:hover {
+			border: 1px solid shade(#f9f9f9, 15%);
+		}
+
+		&:active, &:focus {
+			border: 1px solid shade(#f9f9f9, 35%);
+		}
+	}
+	input {
+		padding: 0.35em;
+	}
+	label {
+		font-family: 'Fjalla One', 'Arial' sans-serif;
+	}
+	textarea {
+		color: #bebebe;
+
+		&:focus {
+			color: $darkgrey;
+		}
+	}
+	input[type=submit]{
+		background: $green;
+		border: none;
+		color: #fff;
+		margin: 0 auto;
+		max-width: 65%;
+		padding: 2em;
+
+		&:hover {
+			background: $darkgrey;
+		}
+	}
+	@include media( $tablet ) {
+		form, article {
+			@include span-columns(6);
+
+			h2 {
+				margin-top: 0;
+			}
+		}
+
+		input, textarea {
+			width: 100%;
+		}
+	}
+}
+
+footer {
+	@include row();
+	@include outer-container;
+	font-size: 0.8em;
+	padding: 1em 0;
+	p {
+		color: shade($grey, 15%);
+		max-width: 25%;
+		margin: 0 auto;
+		sub a {
+			color: shade($grey, 15%);
+			&:hover {
+				color: shade($grey, 35%);
+			}
+		}
+	}
+}
