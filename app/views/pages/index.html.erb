@@ -1,6 +1,6 @@
-<div class="wrapper">
 
-	<section id="history">
+<section id="history">
+	<div class="wrapper">
 		<figure>
 			<%= image_tag("richard-henderson.jpg" ) %>
 		</figure>
@@ -14,9 +14,11 @@
 			<p>Richard currently lives in Jeffersonville, KY,(?) with his wife, Linda. The two enjoy 
 			spending time with his daughter, Syndey, step daughter, Mackenzie, and step granddaughter, Paris.</p>
 		</article>
-	</section>
+	</div>
+</section>
 
-	<section id="platform">
+<section id="platform">
+	<div class="wrapper">
 		<h2>Platform</h2>
 		<article>
 			<p>If elected Treasurer, Richard Henderson plans to stay true to his simple upbringing and blue collar background 
@@ -32,10 +34,11 @@
 		<figure class="experience">
 			<%= image_tag("henderson-stewart.jpg" ) %>
 		</figure>
-		
-	</section>
+	</div>
+</section>
 
-	<section id="experience">
+<section id="experience">
+	<div class="wrapper">
 		<h2> Experience</h2>
 		<div class="columns">
 			<figure>
@@ -55,9 +58,11 @@
 			political endeavors, Richard Henderson has also spent the past 18 years as a small business owner—acting 
 			as CEO and CFO of C&amp;N Concrete (?).</p>
 		</div>
-	</section>
-	
-	<section id="contact">
+	</div>
+</section>
+
+<section id="contact">
+	<div class="wrapper">
 		<h2>Get in touch</h2>
 		<form action="">
 			<h3>How can we help?</h3>
@@ -72,6 +77,9 @@
 		</form>
 		<article>
 			<h3>Pledge your support!</h3>
-		</article>	
-	</section>
-</div>
+			<%= @support.each do |support| %>
+				<%= support.total %>
+			<% end %>
+		</article>
+	</div>
+</section>

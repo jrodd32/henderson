@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  total: 1
+  vote: 1
+  support: 1
+  volunteer: 1
+
+two:
+  total: 1
+  vote: 1
+  support: 1
+  volunteer: 1

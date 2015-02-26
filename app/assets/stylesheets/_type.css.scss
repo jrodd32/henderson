@@ -36,12 +36,10 @@ h1 {
 h2 {
     font-size: 1.9em;
     line-height:1;
+    margin: 0;
     text-align: left;
-    text-transform: uppercase;
-    @include media( $tablet ) {
-		margin-top:1.953em;
-		margin-bottom: 0;
-    }
+    text-transform: uppercase;    
+    
     @include media ( $laptop ) {
     	font-size: 2.874em;
     }

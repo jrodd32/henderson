@@ -6,6 +6,7 @@ $darkgrey: #2d3d47;
 $grey: #667682;
 $blue: #2e98cc;
 $green: #00a967;
+$lightblue: rgba(205,236,255, 0.10);
 
 
 body {
@@ -135,8 +136,8 @@ nav {
 }
 
 main {
-	@include outer-container();
-	margin-bottom: 6em;
+	background: $lightblue;
+	padding-bottom: 6em;
 	padding-top: 4.5em;
 	text-align: center;
 
@@ -220,7 +221,6 @@ img {
 }
 
 #experience {
-	@include outer-container;
 	
 	@include media( $tablet ) {
 		figure {
@@ -299,6 +299,12 @@ img {
 			width: 100%;
 		}
 	}
+}
+#platform, #contact, #experience, #history {
+	padding: 4em 0;
+}
+#experience, #history {
+	background: $lightblue;
 }
 
 footer {
